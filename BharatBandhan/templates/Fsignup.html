@@ -1,0 +1,79 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhashaBandhan</title>
+    
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+    <!-- Body -->
+
+    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+        <div class="uk-width-1-1">
+            <div class="uk-container">
+                <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+                    <div class="uk-width-1-1@m">
+                        <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                            <h3 class="uk-card-title uk-text-center">Login</h3>
+                            <form class="uk-form-stacked" method="POST">
+                                {% csrf_token %}
+                                <div class="uk-margin">
+                                    <label class="uk-form-label">Name</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="text" name="text" required>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label">Email</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label">Documents</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="file" name="file" required>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label">Password</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="password" name="password" required>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label">Re-enter Password</label>
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="password" name="password" required>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Register</button>
+                                </div>
+                            </form>
+                            <div class="uk-margin uk-text-small uk-text-center">
+                                Have an account? <a href="{% url 'Fsignin' %}">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

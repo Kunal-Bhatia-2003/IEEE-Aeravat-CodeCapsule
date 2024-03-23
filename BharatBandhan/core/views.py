@@ -244,3 +244,33 @@ def signin(request):
 def logout(request):
     auth.logout(request)
     return redirect('signin')
+
+def Findex(request):
+    return render(request, 'Findex.html')
+
+def Fsignup(request):
+    return render(request, 'Fsignup.html')
+
+def Fsignin(request):
+    return render(request, 'Fsignin.html')
+
+def Flogout(request):
+    return render(request, 'Flogout.html')
+
+def Fhomepage(request):
+    return render(request, 'Fhomepage.html')
+
+def Fprofile(request):
+    return render(request, 'Fprofile.html')
+
+def Fdocuments(request):
+    return render(request, 'Fdocuments.html')
+
+def Floan(request):
+    return render(request, 'Floan.html')
+
+def Fnetbanking(request):
+    return render(request, 'Fnetbanking.html')
+
+def Ftransaction(request):
+    return render(request, 'Ftransaction.html')
