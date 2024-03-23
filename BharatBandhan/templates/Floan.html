@@ -1,25 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BhashaBandhan</title>
-    
-    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+    <title>Bhasha-Bank - Loans</title>
+    <link rel="stylesheet" href="{% static 'css/Floan.css' %}">
 </head>
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/bank_icon.jpeg' %}" alt="Bank Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="" id="home">Home</a></li>
+                <li><a href="Ftransaction" id="transactions">Transactions</a></li>
+                <li><a href="Fdocuments" id="loan">Documents</a></li>
+                <li><a href="Floan" id="loan">Loan Application</a></li>
+                <li><a href="FDeposit" id="fixed-deposit">Fixed Deposit</a></li>
+                <li><a href="Fsignin" id="signin">Login/Open Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="content">
+        <h2>Loan Options</h2>
+        <div class="loan-section">
+            
+            <div class="loan-type">
+                <h3>Personal Loan</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna in tellus aliquam imperdiet. Curabitur nec lacus fermentum, vestibulum velit vel, hendrerit nisi.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+            <div class="loan-type">
+                <h3>Home Loan</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna in tellus aliquam imperdiet. Curabitur nec lacus fermentum, vestibulum velit vel, hendrerit nisi.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+            <div class="loan-type">
+                <h3>Gold Loan</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna in tellus aliquam imperdiet. Curabitur nec lacus fermentum, vestibulum velit vel, hendrerit nisi.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+            <div class="loan-type">
+                <h3>Car Loan</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna in tellus aliquam imperdiet. Curabitur nec lacus fermentum, vestibulum velit vel, hendrerit nisi.</p>
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Scripts -->
-    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
-    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'assets/js/uikit.js' %}"></script>
-    <script src="{% static 'assets/js/simplebar.js' %}"></script>
-    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <footer>
+        <p>&copy; 2024 Bhasha-Bank. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

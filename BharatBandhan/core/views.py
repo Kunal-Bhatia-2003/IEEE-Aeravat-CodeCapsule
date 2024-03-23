@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount, CustomerProfile
 from itertools import chain
 import random
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -247,7 +248,23 @@ def logout(request):
     return redirect('signin')
 
 def Findex(request):
-    return render(request, 'Findex.html')
+  if request.method == 'POST':
+    message = request.POST.get('message')
+    if message:
+      # Process user message (call get_response or your chatbot logic)
+      response = get_response(message)  # Replace with your logic
+      messages = [{'sender': 'bot', 'content': response}]
+  else:
+    messages = []
+  return render(request, 'Findex.html', {'messages': messages})
+
+def send_message(request):
+    if request.method == 'POST':
+        message = request.POST['message']
+        response = get_response(message)
+        return JsonResponse({'response': response})
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 def Fsignup(request):
     # Signup using Name, Email, Document, Password
@@ -288,10 +305,13 @@ def Fsignup(request):
             return redirect('Fsignup')
     else:
         return render(request, 'Fsignup.html')
-
-    
-
+   
 def Fsignin(request):
+    if(request.method == 'POST'):
+        customer_ID = request.POST['cust_ID']
+        password = request.POST['password']
+        return redirect('Ftransaction')
+        
     return render(request, 'Fsignin.html')
 
 def Flogout(request):
@@ -313,7 +333,93 @@ def Fnetbanking(request):
     return render(request, 'Fnetbanking.html')
 
 def Ftransaction(request):
+    if request.method == 'POST':
+        # Get form data
+        account_holder = request.POST.get('account-holder')
+        receiver = request.POST.get('receiver')
+        payment_type = request.POST.get('payment-type')
+        amount = request.POST.get('amount')
+
+        # Create a new CustomerProfile object (assuming no authentication)
+        customer_profile = CustomerProfile(
+            cust_acc_num=account_holder,
+            rec_acc_num=receiver,
+            account_type=payment_type,
+            cust_old_bal=10000,  # Assuming initial balance
+            cust_new_bal=10000 - float(amount),  # Update balance after transaction
+            rec_old_bal=10000,  # Assuming initial balance
+            rec_new_bal=10000
+        )
+        customer_profile.save()
     return render(request, 'Ftransaction.html')
+
+# ChatBot
+# import random
+# import json
+# import torch
+# from core.model import NeuralNet
+# from core.nltk_utils import bag_of_words, tokenize
+# from googletrans import Translator
+
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# with open('core/intents.json', 'r') as json_data:
+#     intents = json.load(json_data)
+
+# FILE = "core/data.pth"
+# data = torch.load(FILE)
+
+# input_size = data["input_size"]
+# hidden_size = data["hidden_size"]
+# output_size = data["output_size"]
+# all_words = data['all_words']
+# tags = data['tags']
+# model_state = data["model_state"]
+
+# model = NeuralNet(input_size, hidden_size, output_size).to(device)
+# model.load_state_dict(model_state)
+# model.eval()
+
+# translator = Translator()
+
+# bot_name = "Sam"
+
+# def translate_to_english(text):
+#     translated = translator.translate(text, dest='en')
+#     return translated.text
+
+# def translate_to_original_language(text, dest_language):
+#     translated = translator.translate(text, dest=dest_language)
+#     return translated.text
+
+# def get_response(msg):
+#     # Check if the message is in English, if not, translate it to English
+#     detected_language = translator.detect(msg).lang
+#     if detected_language != 'en':
+#         msg = translate_to_english(msg)
+
+#     sentence = tokenize(msg)
+#     X = bag_of_words(sentence, all_words)
+#     X = X.reshape(1, X.shape[0])
+#     X = torch.from_numpy(X).to(device)
+
+#     output = model(X)
+#     _, predicted = torch.max(output, dim=1)
+
+#     tag = tags[predicted.item()]
+
+#     probs = torch.softmax(output, dim=1)
+#     prob = probs[0][predicted.item()]
+#     if prob.item() > 0.75:
+#         for intent in intents['intents']:
+#             if tag == intent["tag"]:
+#                 response = random.choice(intent['responses'])
+#                 # Translate response back to the original language if needed
+#                 if detected_language != 'en':
+#                     response = translate_to_original_language(response, detected_language)
+#                 return response
+    
+#     return "I do not understand..."
 
 import random
 import json
@@ -321,6 +427,11 @@ import torch
 from core.model import NeuralNet
 from core.nltk_utils import bag_of_words, tokenize
 from googletrans import Translator
+
+
+import google.generativeai as genai
+GOOGLE_API_KEY="AIzaSyClDQFt4Nr5QHnbQtk7nnq6v6ORHVy4VNI"
+genai.configure(api_key=GOOGLE_API_KEY)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -380,4 +491,33 @@ def get_response(msg):
                     response = translate_to_original_language(response, detected_language)
                 return response
     
-    return "I do not understand..."
+    model1 = genai.GenerativeModel('gemini-pro')
+    response = model1.generate_content(msg)
+    return response.text
+
+
+# Fraud Detection
+# import pickle
+# import numpy as np
+# from django.views.decorators.csrf import csrf_exempt
+
+# # Load the trained model
+# with open('core/fraud_detection_model.pkl', 'rb') as f:
+#     model = pickle.load(f)
+
+# # Define a function to preprocess input data and make predictions
+# def predict_fraud(details):
+#         features = details
+#         data = [float(features[key]) for key in features]
+
+#         # Make prediction
+#         prediction = model.predict(np.array([data]))
+
+#         # Convert prediction to human-readable format
+#         if prediction[0] == "No Fraud":
+#             result = "No Fraud Detected"
+#         else:
+#             result = "Fraud Detected"
+
+#         # Return prediction as JSON response
+#         return JsonResponse({'result': result})

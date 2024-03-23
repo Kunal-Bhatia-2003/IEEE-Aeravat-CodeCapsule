@@ -4,23 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BhashaBandhan</title>
-    
-    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+    <title>Bhasha-Bank</title>
+    <link rel="stylesheet" href="{% static 'css/Fhomepage.css' %}">
+    <!-- Google Translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/bank_icon.jpeg' %}" alt="Bank Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Fhomepage" id="home">Home</a></li>
+                <li><a href="Ftransaction" id="transactions">Transactions</a></li>
+                <li><a href="Fdocuments" id="loan">Documents</a></li>
+                <li><a href="Floan" id="loan">Loan Application</a></li>
+                <li><a href="FDeposit" id="fixed-deposit">Fixed Deposit</a></li>
+                <li><a href="Flogout" id="signout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="content">
+        <div class="welcome-section">
+            <h2>Welcome, [Username]</h2>
+            <p>Here you can manage your account and access various banking services.</p>
+        </div>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatbox" class="chatbox">
+        <div id="chatbox-toggle" class="chatbox-toggle" onclick="toggleChatbox()">Chat</div>
+        <div id="chatbox-container" class="chatbox-container">
+            <!-- Chatbox content goes here -->
+        </div>
+        <div class="chatbox-input-container">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- Google Translate Language Dropdown -->
+    <div id="google_translate_element"></div>
+    
+    <footer>
+        <p>&copy; 2024 Bhasha-Bank. All Rights Reserved.</p>
+    </footer>
 
     <!-- Scripts -->
-    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
-    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'assets/js/uikit.js' %}"></script>
-    <script src="{% static 'assets/js/simplebar.js' %}"></script>
-    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'js/script2.js' %}"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,mr,bn,ta,te,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
 </body>
 </html>

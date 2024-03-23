@@ -139,6 +139,167 @@
         "Our team strives to process applications promptly, and you will receive approval notification as soon as your application is processed.",
         "You can expect a decision on your personal loan application within a few business days, subject to verification of documents and credit assessment."
       ]
-    }
+    },
+      {
+        "tag": "transaction_limits",
+        "patterns": [
+          "What are the monthly transaction limits?",
+          "Is there a limit on how much I can transact per month?",
+          "Can you tell me about the daily transaction limits?"
+        ],
+        "responses": [
+          "Monthly transaction limits vary depending on your account type. You can check your specific limits in your account terms and conditions.",
+          "Daily transaction limits are set to ensure security. You can find details about your daily limits in your account agreement or by contacting customer service."
+        ]
+      },
+      {
+        "tag": "home_loan_documents",
+        "patterns": [
+          "What documents do I need for a home loan application?",
+          "Can you provide a list of documents required for a home loan?",
+          "I'm interested in applying for a home loan, what paperwork do I need?"
+        ],
+        "responses": [
+          "Documents needed for a home loan typically include proof of identity, address proof, income documents (such as salary slips or income tax returns), property documents, and bank statements.",
+          "You'll generally need documents like ID proof, address proof, income proof, property documents, and bank statements for a home loan application."
+        ]
+      },
+      {
+        "tag": "car_loan_documents",
+        "patterns": [
+          "What documents are necessary for a car loan application?",
+          "Could you list the documents required for a car loan?",
+          "I'm planning to apply for a car loan, what paperwork should I prepare?"
+        ],
+        "responses": [
+          "Documents typically needed for a car loan include proof of identity, address proof, income documents, vehicle registration papers, and insurance documents.",
+          "For a car loan, you'll generally need documents like ID proof, address proof, income proof, vehicle registration papers, and insurance documents."
+        ]
+      },
+      {
+        "tag": "aadhar_bank_link",
+        "patterns": [
+          "How can I link my Aadhar card to my bank account?",
+          "What is the process for linking Aadhar with bank account?",
+          "Can you guide me on linking my Aadhar with my bank?"
+        ],
+        "responses": [
+          "You can usually link your Aadhar card to your bank account through internet banking, mobile banking, or by visiting your bank branch with your Aadhar card and bank passbook.",
+          "To link your Aadhar with your bank account, you may need to fill out a form provided by your bank or do it online through the bank's website or mobile app."
+        ]
+      },
+      {
+        "tag": "account_balance",
+        "patterns": [
+          "How can I check my account balance?",
+          "What is my current balance?",
+          "Where can I see my account balance?"
+        ],
+        "responses": [
+          "You can check your account balance through our mobile app or website.",
+          "To check your account balance, you can use our ATM machines or online banking platform."
+        ]
+      },
+      {
+        "tag": "overdraft",
+        "patterns": [
+          "What is an overdraft?",
+          "How does overdraft work?",
+          "Can you explain overdraft to me?"
+        ],
+        "responses": [
+          "An overdraft allows you to borrow money from your bank account up to a certain limit, usually for a fee.",
+          "An overdraft is a service that lets you spend more money than you have in your account, up to a set limit."
+        ]
+      },
+      {
+        "tag": "interest_rates",
+        "patterns": [
+          "What are interest rates?",
+          "How do interest rates affect my savings?",
+          "Can you explain how interest rates work?"
+        ],
+        "responses": [
+          "Interest rates are the percentage at which a bank will lend money to you or pay you for keeping your money with them.",
+          "Interest rates determine how much you earn on your savings or how much you pay on loans."
+        ]
+      },
+      {
+        "tag": "loan_terms",
+        "patterns": [
+          "What are the terms of this loan?",
+          "Can you explain the terms of this loan to me?",
+          "I don't understand some loan terms, can you help?"
+        ],
+        "responses": [
+          "Loan terms include the amount borrowed, interest rate, repayment period, and any fees or penalties.",
+          "Loan terms specify the conditions under which the loan is provided, including interest rates, payment schedule, and any collateral required."
+        ]
+      },
+      {
+        "tag": "credit_score",
+        "patterns": [
+          "How can I check my credit score?",
+          "What factors affect my credit score?",
+          "Why is my credit score important?"
+        ],
+        "responses": [
+          "You can check your credit score through credit bureaus or our banking platform.",
+          "Factors affecting your credit score include payment history, credit utilization, length of credit history, types of credit used, and recent credit inquiries."
+        ]
+      },
+      {
+        "tag": "security",
+        "patterns": [
+          "How secure is my account?",
+          "What measures are in place to protect my account?",
+          "Can you reassure me about the security of my funds?"
+        ],
+        "responses": [
+          "We employ encryption, multi-factor authentication, and continuous monitoring to safeguard your account.",
+          "Your account security is our top priority. We use advanced security measures to protect your funds and personal information."
+        ]
+      },
+      {
+        "tag": "account_opening_process",
+        "patterns": [
+          "How do I open a new account?",
+          "What documents are required to open an account?",
+          "Can you guide me through the account opening process?",
+          "Where can I find the account opening forms?"
+        ],
+        "responses": [
+          "To open a new account, you can visit any of our branches or apply online through our website.",
+          "Documents required for account opening typically include proof of identity, proof of address, and passport-sized photographs.",
+          "Our staff will assist you with the account opening process and provide you with the necessary forms and guidance."
+        ]
+      },
+      {
+        "tag": "fixed_deposit_forms",
+        "patterns": [
+          "How can I open a fixed deposit account?",
+          "What are the steps to apply for a fixed deposit?",
+          "Do I need to fill out any forms for a fixed deposit?",
+          "Where can I get the fixed deposit forms?"
+        ],
+        "responses": [
+          "To open a fixed deposit account, you can fill out the fixed deposit application form available at our branches or on our website.",
+          "Fixed deposit forms can be obtained from our branches or downloaded from our website.",
+          "Our staff will assist you with the fixed deposit application process and provide you with the necessary forms."
+        ]
+      },
+      {
+        "tag": "personal_loan_application",
+        "patterns": [
+          "How do I apply for a personal loan?",
+          "What are the requirements for a personal loan application?",
+          "Can you help me with the personal loan application process?",
+          "Where can I find the personal loan application form?"
+        ],
+        "responses": [
+          "To apply for a personal loan, you can visit our branch or apply online through our website.",
+          "Requirements"
+        ]
+      }
   ]
 }

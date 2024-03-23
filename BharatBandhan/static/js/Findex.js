@@ -2,14 +2,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatboxContainer = document.getElementById("chatbox-container");
     const userInput = document.getElementById("userInput");
     const sendButton = document.getElementById("sendButton");
+    const chatbotMessageElement = document.getElementById("chatbot-message");
 
     // Function to send user input to backend
     function sendMessageToBackend(message) {
         // Assuming you're using fetch API to send data to Django backend
-        fetch("/send-message/", {
+        fetch("/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "X-CSRFToken": csrftoken,
             },
             body: JSON.stringify({ message: message }),
         })

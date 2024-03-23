@@ -1,16 +1,21 @@
 import random
 import json
 import torch
-from core.model import NeuralNet
-from core.nltk_utils import bag_of_words, tokenize
+from model import NeuralNet
+from nltk_utils import bag_of_words, tokenize
 from googletrans import Translator
+
+
+import google.generativeai as genai
+GOOGLE_API_KEY="AIzaSyClDQFt4Nr5QHnbQtk7nnq6v6ORHVy4VNI"
+genai.configure(api_key=GOOGLE_API_KEY)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('core/intents.json', 'r') as json_data:
+with open('intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "core/data.pth"
+FILE = "data.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
@@ -63,4 +68,6 @@ def get_response(msg):
                     response = translate_to_original_language(response, detected_language)
                 return response
     
-    return "I do not understand..."
+    model1 = genai.GenerativeModel('gemini-pro')
+    response = model1.generate_content(msg)
+    return response.text

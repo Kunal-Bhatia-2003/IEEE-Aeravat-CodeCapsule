@@ -16,11 +16,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="Findex" id="home">Home</a></li>
-                <li><a href="/open-account/" id="open-account">Open Account</a></li>
-                <li><a href="/loan/" id="loan">Loan Applications</a></li>
-                <li><a href="/fixed-deposit/" id="fixed-deposit">Fixed Deposit</a></li>
-                <li><a href="/contact/" id="contact">Contact</a></li>
+                <li><a href="/" id="home">Home</a></li>
+                <li><a href="Fsignup" id="open-account">Open Account</a></li>
+                <li><a href="Floan" id="loan">Loan Applications</a></li>
+                <li><a href="#" id="fixed-deposit">Fixed Deposit</a></li>
+                <li><a href="#" id="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -34,16 +34,25 @@
     </div>
 
    <!-- Chatbox -->
-<div id="chatbox" class="chatbox">
-    <div id="chatbox-toggle" class="chatbox-toggle" onclick="toggleChatbox()">Chat</div>
-    <div id="chatbox-container" class="chatbox-container">
-        <!-- Chatbox content goes here -->
+   <form method="POST">
+    {% csrf_token %}
+    <div id="chatbox" class="chatbox">
+      <div id="chatbox-toggle" class="chatbox-toggle" onclick="toggleChatbox()">Chat</div>
+      <div id="chatbox-container" class="chatbox-container">
+        {% for message in messages %}
+          <div class="message {% if message.sender == 'user' %}user-message{% else %}bot-message{% endif %}">
+            {{ message.content }}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="chatbox-input-container">
+        <input type="text" name="message" id="userInput" placeholder="Type a message...">
+        <button type="submit" id="sendButton">Send</button>
+      </div>
     </div>
-    <div class="chatbox-input-container">
-        <input type="text" id="userInput" placeholder="Type a message...">
-        <button id="sendButton">Send</button>
-    </div>
-</div>
+  </form>
+  
+  
 
 
     <!-- Google Translate Language Dropdown -->
