@@ -17,41 +17,42 @@
 </head>
 <body>
     <!-- Body -->
+    <div>
+        <!-- Navbar -->
+        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+            <div class="uk-navbar-left">
+                <a href="#" class="uk-navbar-item uk-logo">
+                    <img src="{% static '/images/bank_icon.jpeg' %}" class = "responsive-img" alt="Logo">
+                </a>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </div>
+    <div>
+        <!-- Detail Section -->
+        <div class="hero-section">
+            <div class="hero-section-text">
+                <h1 class="hero-section-text-heading">BhashaBandhan</h1>
+                <p class="hero-section-text-para">A platform to connect people through languages</p>
+                <a href="#" class="hero-section-text-button">Get Started</a>
+            </div>
+            <div class="hero-section-image">
+                <img src="{% static '/images/hero-image.png' %}" class="responsive-img" alt="Hero Image">
+            </div>
+        </div>
+        <!-- Detail Section -->
 
-    <header>
-        <div class="logo">
-          <img src="{% static 'images/bank_icon.jpeg' %} " class="responsive-img" alt="BharatBandhan Logo">
-        </div>
-        <div class="header-right">
-          <a href="Fsignin" class="login-btn">Login</a> <div class="language-switcher"> <span id="current-language" data-language="en">English</span>
-            <ul id="language-options">
-              <li data-language="en"><i class="flag-icon flag-icon-us"></i> English</li>
-              <li data-language="hi"><i class="flag-icon flag-icon-in"></i> Hindi</li>
-              </ul>
-          </div>
-        </div>
-      </header>
+    <!-- Body -->
     
-      <main>
-        <section class="hero">
-          <h2>Welcome to the Future of Banking</h2>
-          <p>Experience seamless, secure, and convenient banking at BharatBandhan. We offer a wide range of services to cater to all your financial needs.</p>
-          <a href="#">Open an Account</a><br>
-          <a href="#">Explore Our Services</a>
-        </section>
-    
-        <div class="chatbot-container">
-          <button id="chatbot-toggle">Chat with Us</button>
-          <div id="chatbot-window">
-            <p>This is where the chatbot conversation would appear.</p>
-          </div>
-        </div>
-    
-      </main>
-    
-      <footer>
-        <p>&copy; 2024 BharatBandhan Bank. All Rights Reserved.</p>
-      </footer>
 
     <!-- Scripts -->
     <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  

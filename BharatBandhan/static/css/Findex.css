@@ -18,10 +18,14 @@
   }
   
   .responsive-img {
-    width: 100%;
+    width: auto;
     height: 66px;
   }
 
   header {
     align-items: center;
+  }
+
+  .navbar-right {
+    margin-right: 0%;
   }
