@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount
 from itertools import chain
 import random
+from core.TestChatBot import chat
 
 # Create your views here.
 
@@ -253,7 +254,7 @@ def Fsignup(request):
     if request.method == 'POST':
         name = request.POST['name']
         email = request.POST['email']
-        document = request.POST['document']
+        document = request.POST['file']
         password = request.POST['password']
         password2 = request.POST['password2']
 

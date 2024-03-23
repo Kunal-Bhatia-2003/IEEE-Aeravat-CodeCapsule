@@ -1,0 +1,369 @@
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> venv\Scripts\activate
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> pip install Flask torch torchvision nltk
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flask/
+Collecting Flask
+  Obtaining dependency information for Flask from https://files.pythonhosted.org/packages/93/a6/aa98bfe0eb9b8b15d36cdfd03c8ca86a03968a87f27ce224fb4f766acb23/flask-3.0.2-py3-none-any.whl.metadata
+  Downloading flask-3.0.2-py3-none-any.whl.metadata (3.6 kB)
+Collecting torch
+  Obtaining dependency information for torch from https://files.pythonhosted.org/packages/d0/ed/9014bef608b318664c2e8b77888449eb605023cdc6c33fad6c47f1a79596/torch-2.2.1-cp312-cp312-win_amd64.whl.metadata
+  Downloading torch-2.2.1-cp312-cp312-win_amd64.whl.metadata (26 kB)
+Collecting torchvision
+  Obtaining dependency information for torchvision from https://files.pythonhosted.org/packages/a1/e3/5fd1c7d1836141b0bd253502be910c73d84a34ced27a289ea4ca4975ef3b/torchvision-0.17.1-cp312-cp312-win_amd64.whl.metadata      
+  Downloading torchvision-0.17.1-cp312-cp312-win_amd64.whl.metadata (6.6 kB)
+Collecting nltk
+  Obtaining dependency information for nltk from https://files.pythonhosted.org/packages/a6/0a/0d20d2c0f16be91b9fa32a77b76c60f9baf6eba419e5ef5deca17af9c582/nltk-3.8.1-py3-none-any.whl.metadata
+  Downloading nltk-3.8.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting Werkzeug>=3.0.0 (from Flask)
+  Obtaining dependency information for Werkzeug>=3.0.0 from https://files.pythonhosted.org/packages/c3/fc/254c3e9b5feb89ff5b9076a23218dafbc99c96ac5941e900b71206e6313b/werkzeug-3.0.1-py3-none-any.whl.metadata
+  Downloading werkzeug-3.0.1-py3-none-any.whl.metadata (4.1 kB)
+Collecting Jinja2>=3.1.2 (from Flask)
+  Obtaining dependency information for Jinja2>=3.1.2 from https://files.pythonhosted.org/packages/30/6d/6de6be2d02603ab56e72997708809e8a5b0fbfee080735109b40a3564843/Jinja2-3.1.3-py3-none-any.whl.metadata
+  Downloading Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
+Collecting itsdangerous>=2.1.2 (from Flask)
+  Obtaining dependency information for itsdangerous>=2.1.2 from https://files.pythonhosted.org/packages/68/5f/447e04e828f47465eeab35b5d408b7ebaaaee207f48b7136c5a7267a30ae/itsdangerous-2.1.2-py3-none-any.whl.metadata       
+  Downloading itsdangerous-2.1.2-py3-none-any.whl.metadata (2.9 kB)
+Collecting click>=8.1.3 (from Flask)
+  Obtaining dependency information for click>=8.1.3 from https://files.pythonhosted.org/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl.metadata
+  Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+Collecting blinker>=1.6.2 (from Flask)
+  Obtaining dependency information for blinker>=1.6.2 from https://files.pythonhosted.org/packages/fa/2a/7f3714cbc6356a0efec525ce7a0613d581072ed6eb53eb7b9754f33db807/blinker-1.7.0-py3-none-any.whl.metadata
+  Downloading blinker-1.7.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting filelock (from torch)
+  Obtaining dependency information for filelock from https://files.pythonhosted.org/packages/81/54/84d42a0bee35edba99dee7b59a8d4970eccdd44b99fe728ed912106fc781/filelock-3.13.1-py3-none-any.whl.metadata
+  Downloading filelock-3.13.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting typing-extensions>=4.8.0 (from torch)
+  Obtaining dependency information for typing-extensions>=4.8.0 from https://files.pythonhosted.org/packages/f9/de/dc04a3ea60b22624b51c703a84bbe0184abcd1d0b9bc8074b5d6b7ab90bb/typing_extensions-4.10.0-py3-none-any.whl.metadata
+  Downloading typing_extensions-4.10.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy (from torch)
+  Obtaining dependency information for sympy from https://files.pythonhosted.org/packages/d2/05/e6600db80270777c4a64238a98d442f0fd07cc8915be2a1c16da7f2b9e74/sympy-1.12-py3-none-any.whl.metadata
+  Downloading sympy-1.12-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch)
+  Obtaining dependency information for networkx from https://files.pythonhosted.org/packages/d5/f0/8fbc882ca80cf077f1b246c0e3c3465f7f415439bdea6b899f6b19f61f70/networkx-3.2.1-py3-none-any.whl.metadata
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting fsspec (from torch)
+  Obtaining dependency information for fsspec from https://files.pythonhosted.org/packages/93/6d/66d48b03460768f523da62a57a7e14e5e95fdf339d79e996ce3cecda2cdb/fsspec-2024.3.1-py3-none-any.whl.metadata
+  Downloading fsspec-2024.3.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting numpy (from torchvision)
+  Obtaining dependency information for numpy from https://files.pythonhosted.org/packages/16/2e/86f24451c2d530c88daf997cb8d6ac622c1d40d19f5a031ed68a4b73a374/numpy-1.26.4-cp312-cp312-win_amd64.whl.metadata
+  Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 546.2 kB/s eta 0:00:00
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Obtaining dependency information for pillow!=8.3.*,>=5.3.0 from https://files.pythonhosted.org/packages/51/07/7e9266a59bb267b56c1f432f6416653b9a78dda771c57740d064a8aa2a44/pillow-10.2.0-cp312-cp312-win_amd64.whl.metadata 
+  Downloading pillow-10.2.0-cp312-cp312-win_amd64.whl.metadata (9.9 kB)
+Collecting joblib (from nltk)
+  Obtaining dependency information for joblib from https://files.pythonhosted.org/packages/10/40/d551139c85db202f1f384ba8bcf96aca2f329440a844f924c8a0040b6d02/joblib-1.3.2-py3-none-any.whl.metadata
+  Downloading joblib-1.3.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting regex>=2021.8.3 (from nltk)
+  Obtaining dependency information for regex>=2021.8.3 from https://files.pythonhosted.org/packages/1d/af/4bd17254cdda1d8092460ee5561f013c4ca9c33ecf1aab81b44280327cab/regex-2023.12.25-cp312-cp312-win_amd64.whl.metadata    
+  Downloading regex-2023.12.25-cp312-cp312-win_amd64.whl.metadata (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.0/42.0 kB 203.4 kB/s eta 0:00:00
+Collecting tqdm (from nltk)
+  Obtaining dependency information for tqdm from https://files.pythonhosted.org/packages/2a/14/e75e52d521442e2fcc9f1df3c5e456aead034203d4797867980de558ab34/tqdm-4.66.2-py3-none-any.whl.metadata
+  Downloading tqdm-4.66.2-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.6/57.6 kB 233.2 kB/s eta 0:00:00
+Collecting colorama (from click>=8.1.3->Flask)
+  Obtaining dependency information for colorama from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask)
+  Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/3f/14/c3554d512d5f9100a95e737502f4a2323a1959f6d0d01e0d0997b35f7b10/MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl.metadata    
+  Downloading MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl.metadata (3.1 kB)
+Collecting mpmath>=0.19 (from sympy->torch)
+  Obtaining dependency information for mpmath>=0.19 from https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl.metadata
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading flask-3.0.2-py3-none-any.whl (101 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.3/101.3 kB 645.8 kB/s eta 0:00:00
+Downloading torch-2.2.1-cp312-cp312-win_amd64.whl (198.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 198.5/198.5 MB 276.6 kB/s eta 0:00:00
+Downloading torchvision-0.17.1-cp312-cp312-win_amd64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 437.5 kB/s eta 0:00:00
+Downloading nltk-3.8.1-py3-none-any.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 502.8 kB/s eta 0:00:00
+Downloading blinker-1.7.0-py3-none-any.whl (13 kB)
+Downloading click-8.1.7-py3-none-any.whl (97 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 181.2 kB/s eta 0:00:00
+Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Downloading Jinja2-3.1.3-py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.2/133.2 kB 253.6 kB/s eta 0:00:00
+Downloading pillow-10.2.0-cp312-cp312-win_amd64.whl (2.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 224.4 kB/s eta 0:00:00
+Downloading regex-2023.12.25-cp312-cp312-win_amd64.whl (268 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 268.9/268.9 kB 275.8 kB/s eta 0:00:00
+Downloading typing_extensions-4.10.0-py3-none-any.whl (33 kB)
+Downloading werkzeug-3.0.1-py3-none-any.whl (226 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.7/226.7 kB 195.2 kB/s eta 0:00:00
+Downloading filelock-3.13.1-py3-none-any.whl (11 kB)
+Downloading fsspec-2024.3.1-py3-none-any.whl (171 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 172.0/172.0 kB 240.7 kB/s eta 0:00:00
+Downloading joblib-1.3.2-py3-none-any.whl (302 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 302.2/302.2 kB 256.1 kB/s eta 0:00:00
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 296.1 kB/s eta 0:00:00
+Downloading numpy-1.26.4-cp312-cp312-win_amd64.whl (15.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.5/15.5 MB 328.8 kB/s eta 0:00:00
+Downloading sympy-1.12-py3-none-any.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 359.3 kB/s eta 0:00:00
+Downloading tqdm-4.66.2-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.3/78.3 kB 486.1 kB/s eta 0:00:00
+Downloading MarkupSafe-2.1.5-cp312-cp312-win_amd64.whl (17 kB)
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 105.2 kB/s eta 0:00:00
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Installing collected packages: mpmath, typing-extensions, sympy, regex, pillow, numpy, networkx, MarkupSafe, joblib, itsdangerous, fsspec, filelock, colorama, blinker, Werkzeug, tqdm, Jinja2, click, torch, nltk, Flask, torchvision
+Successfully installed Flask-3.0.2 Jinja2-3.1.3 MarkupSafe-2.1.5 Werkzeug-3.0.1 blinker-1.7.0 click-8.1.7 colorama-0.4.6 filelock-3.13.1 fsspec-2024.3.1 itsdangerous-2.1.2 joblib-1.3.2 mpmath-1.3.0 networkx-3.2.1 nltk-3.8.1 numpy-1.26.4 pillow-10.2.0 regex-2023.12.25 sympy-1.12 torch-2.2.1 torchvision-0.17.1 tqdm-4.66.2 typing-extensions-4.10.0
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment>
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python
+Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nltk
+>>> nltk.download('punkt')
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\SIDDHESH\AppData\Roaming\nltk_data...
+[nltk_data]   Unzipping tokenizers\punkt.zip.
+True
+>>> quit()
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python train.py
+26 patterns
+7 tags: ['delivery', 'funny', 'goodbye', 'greeting', 'items', 'payments', 'thanks']
+54 unique stemmed words: ["'s", 'a', 'accept', 'anyon', 'are', 'bye', 'can', 'card', 'cash', 'credit', 'day', 'deliveri', 'do', 'doe', 'funni', 'get', 'good', 'goodby', 'have', 'hello', 'help', 'hey', 'hi', 'how', 'i', 'is', 'item', 'joke', 'kind', 'know', 'later', 'long', 'lot', 'mastercard', 'me', 'my', 'of', 'onli', 'pay', 'paypal', 'see', 'sell', 'ship', 'someth', 'take', 'tell', 'thank', 'that', 'there', 'what', 'when', 'which', 'with', 'you']
+54 7
+Epoch [100/1000], Loss: 0.5827
+Epoch [200/1000], Loss: 0.0392
+Epoch [300/1000], Loss: 0.0089
+Epoch [400/1000], Loss: 0.0101
+Epoch [500/1000], Loss: 0.0065
+Epoch [600/1000], Loss: 0.0025
+Epoch [700/1000], Loss: 0.0026
+Epoch [800/1000], Loss: 0.0010
+Epoch [900/1000], Loss: 0.0005
+Epoch [1000/1000], Loss: 0.0015
+final loss: 0.0015
+training complete. file saved to data.pth
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python chat.py
+Let's chat! (type 'quit' to exit)
+You: how are youuu?
+Hi there, what can I do for you?
+You: hi
+Hi there, how can I help?
+You: HI
+Hi there, what can I do for you?
+You: Hi
+Hi there, how can I help?
+You: what do sou sell?
+We sell coffee and tea
+You: what do you have?
+We have coffee and tea
+You: quit
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python train.py
+Traceback (most recent call last):
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\train.py", line 13, in <module>
+    intents = json.load(f)
+              ^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 83 column 5 (char 2013)                 python train.pyv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment>
+18 patterns
+6 tags: ['account_balance', 'credit_score', 'interest_rates', 'loan_terms', 'overdraft', 'security']
+49 unique stemmed words: [',', 'about', 'account', 'affect', 'an', 'are', 'balanc', 'can', 'check', 'credit', 'current', 'do', 'doe', 'explain', 'factor', 'fund', 'help', 'how', 'i', 'import', 'in', 'interest', 'is', 'loan', 'me', 'measur', 'my', "n't", 'of', 'overdraft', 'place', 'protect', 'rate', 'reassur', 'save', 'score', 'secur', 'see', 'some', 'term', 'the', 'thi', 'to', 'understand', 'what', 'where', 'whi', 'work', 'you']
+49 6
+Epoch [100/1000], Loss: 0.8993
+Epoch [200/1000], Loss: 0.0286
+Epoch [300/1000], Loss: 0.0139
+Epoch [400/1000], Loss: 0.0114
+Epoch [500/1000], Loss: 0.0024
+Epoch [600/1000], Loss: 0.0027
+Epoch [700/1000], Loss: 0.0006
+Epoch [800/1000], Loss: 0.0006
+Epoch [900/1000], Loss: 0.0009
+Epoch [1000/1000], Loss: 0.0003
+final loss: 0.0003
+training complete. file saved to data.pth
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python chat.py
+Let's chat! (type 'quit' to exit)
+You: how to check balance
+To check your account balance, you can use our ATM machines or online banking platform.
+You: what type of interst rate does the bank provide?
+I do not understand...
+You: what type of interest rate is there?
+Interest rates are the percentage at which a bank will lend money to you or pay you for keeping your money with them.
+You: quit
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python train.py
+36 patterns
+11 tags: ['account_balance', 'account_opening_process', 'application_approval', 'application_status', 'credit_score', 'fixed_deposit_forms', 'interest_rates', 'loan_terms', 'overdraft', 'personal_loan_application', 'security']
+87 unique stemmed words: [',', 'a', 'about', 'account', 'affect', 'an', 'ani', 'appli', 'applic', 'approv', 'are', 'balanc', 'be', 'can', 'check', 'credit', 'current', 'decis', 'deposit', 'do', 'document', 'doe', 'expect', 'explain', 'factor', 'fill', 'find', 'fix', 'for', 'form', 'fund', 'get', 'guid', 'help', 'how', 'i', 'import', 'in', 'interest', 'is', 'it', 'loan', 'long', 'me', 'measur', 'my', "n't", 'need', 'new', 'of', 'on', 'open', 'out', 'overdraft', 'person', 'place', 'process', 'protect', 'provid', 'rate', 'reassur', 'receiv', 'requir', 'save', 'score', 'secur', 'see', 'some', 'soon', 'statu', 'step', 'take', 'term', 'the', 'thi', 'through', 'to', 'understand', 'updat', 'what', 'when', 'where', 'whi', 'will', 'with', 'work', 'you']
+87 11
+Epoch [100/1000], Loss: 1.1729
+Epoch [200/1000], Loss: 0.0921
+Epoch [300/1000], Loss: 0.0137
+Epoch [400/1000], Loss: 0.0074
+Epoch [500/1000], Loss: 0.0034
+Epoch [600/1000], Loss: 0.0016
+Epoch [700/1000], Loss: 0.0016
+Epoch [800/1000], Loss: 0.0009
+Epoch [900/1000], Loss: 0.0006
+Epoch [1000/1000], Loss: 0.0002
+final loss: 0.0002
+training complete. file saved to data.pth
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python chat.py 
+Let's chat! (type 'quit' to exit)
+You: how soon can will my loan aplication take for approval?
+Our team strives to process applications promptly, and you will receive approval notification as soon as your application is processed.
+You: quit
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> quit()
+At line:1 char:6
++ quit()
++      ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedExpression
+
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> pip install googletrans
+Collecting googletrans
+  Downloading googletrans-3.0.0.tar.gz (17 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting httpx==0.13.3 (from googletrans)
+  Obtaining dependency information for httpx==0.13.3 from https://files.pythonhosted.org/packages/54/b4/698b284c6aed4d7c2b4fe3ba5df1fcf6093612423797e76fbb24890dd22f/httpx-0.13.3-py3-none-any.whl.metadata
+  Downloading httpx-0.13.3-py3-none-any.whl.metadata (25 kB)
+Collecting certifi (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for certifi from https://files.pythonhosted.org/packages/ba/06/a07f096c664aeb9f01624f858c3add0a4e913d6c96257acb4fce61e7de14/certifi-2024.2.2-py3-none-any.whl.metadata
+  Downloading certifi-2024.2.2-py3-none-any.whl.metadata (2.2 kB)
+Collecting hstspreload (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for hstspreload from https://files.pythonhosted.org/packages/25/2a/e9ca0cdf8bd33d61d8d237b19e62d5c2f2666e482ae3fd45e0a80b8dcfd0/hstspreload-2024.3.1-py3-none-any.whl.metadata
+  Downloading hstspreload-2024.3.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting sniffio (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for sniffio from https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl.metadata
+  Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting chardet==3.* (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for chardet==3.* from https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl.metadata
+  Downloading chardet-3.0.4-py2.py3-none-any.whl.metadata (3.2 kB)
+Collecting idna==2.* (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for idna==2.* from https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl.metadata
+  Downloading idna-2.10-py2.py3-none-any.whl.metadata (9.1 kB)
+Collecting rfc3986<2,>=1.3 (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for rfc3986<2,>=1.3 from https://files.pythonhosted.org/packages/c4/e5/63ca2c4edf4e00657584608bee1001302bbf8c5f569340b78304f2f446cb/rfc3986-1.5.0-py2.py3-none-any.whl.metadata
+  Downloading rfc3986-1.5.0-py2.py3-none-any.whl.metadata (6.5 kB)
+Collecting httpcore==0.9.* (from httpx==0.13.3->googletrans)
+  Obtaining dependency information for httpcore==0.9.* from https://files.pythonhosted.org/packages/dd/d5/e4ff9318693ac6101a2095e580908b591838c6f33df8d3ee8dd953ba96a8/httpcore-0.9.1-py3-none-any.whl.metadata
+  Downloading httpcore-0.9.1-py3-none-any.whl.metadata (4.6 kB)
+Collecting h11<0.10,>=0.8 (from httpcore==0.9.*->httpx==0.13.3->googletrans)
+  Obtaining dependency information for h11<0.10,>=0.8 from https://files.pythonhosted.org/packages/5a/fd/3dad730b0f95e78aeeb742f96fa7bbecbdd56a58e405d3da440d5bfb90c6/h11-0.9.0-py2.py3-none-any.whl.metadata
+  Downloading h11-0.9.0-py2.py3-none-any.whl.metadata (8.1 kB)
+Collecting h2==3.* (from httpcore==0.9.*->httpx==0.13.3->googletrans)
+  Obtaining dependency information for h2==3.* from https://files.pythonhosted.org/packages/25/de/da019bcc539eeab02f6d45836f23858ac467f584bfec7a526ef200242afe/h2-3.2.0-py2.py3-none-any.whl.metadata
+  Downloading h2-3.2.0-py2.py3-none-any.whl.metadata (32 kB)
+Collecting hyperframe<6,>=5.2.0 (from h2==3.*->httpcore==0.9.*->httpx==0.13.3->googletrans)
+  Obtaining dependency information for hyperframe<6,>=5.2.0 from https://files.pythonhosted.org/packages/19/0c/bf88182bcb5dce3094e2f3e4fe20db28a9928cb7bd5b08024030e4b140db/hyperframe-5.2.0-py2.py3-none-any.whl.metadata    
+  Downloading hyperframe-5.2.0-py2.py3-none-any.whl.metadata (7.2 kB)
+Collecting hpack<4,>=3.0 (from h2==3.*->httpcore==0.9.*->httpx==0.13.3->googletrans)
+  Obtaining dependency information for hpack<4,>=3.0 from https://files.pythonhosted.org/packages/8a/cc/e53517f4a1e13f74776ca93271caef378dadec14d71c61c949d759d3db69/hpack-3.0.0-py2.py3-none-any.whl.metadata
+  Downloading hpack-3.0.0-py2.py3-none-any.whl.metadata (7.0 kB)
+Downloading httpx-0.13.3-py3-none-any.whl (55 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.1/55.1 kB 477.2 kB/s eta 0:00:00
+Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.4/133.4 kB 715.8 kB/s eta 0:00:00
+Downloading httpcore-0.9.1-py3-none-any.whl (42 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 689.4 kB/s eta 0:00:00
+Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 771.0 kB/s eta 0:00:00
+Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading h2-3.2.0-py2.py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.0/65.0 kB 438.4 kB/s eta 0:00:00
+Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)
+Downloading certifi-2024.2.2-py3-none-any.whl (163 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.8/163.8 kB 363.8 kB/s eta 0:00:00
+Downloading hstspreload-2024.3.1-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 456.3 kB/s eta 0:00:00
+Downloading h11-0.9.0-py2.py3-none-any.whl (53 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.6/53.6 kB 346.9 kB/s eta 0:00:00
+Downloading hpack-3.0.0-py2.py3-none-any.whl (38 kB)
+Downloading hyperframe-5.2.0-py2.py3-none-any.whl (12 kB)
+Building wheels for collected packages: googletrans
+  Building wheel for googletrans (pyproject.toml) ... done
+  Created wheel for googletrans: filename=googletrans-3.0.0-py3-none-any.whl size=15780 sha256=4ad41a16cc7d27fd2f4a0be67f35c84d7f697020a638a7f46ce8e6a4eff450a3
+  Stored in directory: c:\users\siddhesh\appdata\local\pip\cache\wheels\42\7b\d6\83f2d86a7a395f572a917a76605eef432f46345e3383b92ec0
+Successfully built googletrans
+Installing collected packages: rfc3986, hyperframe, hpack, h11, chardet, sniffio, idna, hstspreload, h2, certifi, httpcore, httpx, googletrans
+Successfully installed certifi-2024.2.2 chardet-3.0.4 googletrans-3.0.0 h11-0.9.0 h2-3.2.0 hpack-3.0.0 hstspreload-2024.3.1 httpcore-0.9.1 httpx-0.13.3 hyperframe-5.2.0 idna-2.10 rfc3986-1.5.0 sniffio-1.3.1
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip                                    python chat.py         \Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment>
+Let's chat! (type 'quit' to exit)
+You: "मैं अपना खाता शेष कैसे जांच सकता हूं?"
+Traceback (most recent call last):
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\chat.py", line 75, in <module>
+    resp = get_response(sentence)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\chat.py", line 41, in get_response
+    detected_language = translator.detect(msg).lang
+                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\venv\Lib\site-packages\googletrans\client.py", line 255, in detect
+    data = self._translate(text, 'en', 'auto', kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\venv\Lib\site-packages\googletrans\client.py", line 78, in _translate
+    token = self.token_acquirer.do(text)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\venv\Lib\site-packages\googletrans\gtoken.py", line 194, in do
+    self._update()
+  File "C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment\venv\Lib\site-packages\googletrans\gtoken.py", line 62, in _update
+    code = self.RE_TKK.search(r.text).group(1).replace('var ', '')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> pip install --upgrade googletrans==4.0.0-rc1
+Collecting googletrans==4.0.0-rc1
+  Downloading googletrans-4.0.0rc1.tar.gz (20 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: httpx==0.13.3 in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from googletrans==4.0.0-rc1) (0.13.3)
+Requirement already satisfied: certifi in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (2024.2.2)
+Requirement already satisfied: hstspreload in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (2024.3.1)
+Requirement already satisfied: sniffio in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (1.3.1)
+Requirement already satisfied: chardet==3.* in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (3.0.4)
+Requirement already satisfied: idna==2.* in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (2.10)
+Requirement already satisfied: rfc3986<2,>=1.3 in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (1.5.0)        
+Requirement already satisfied: httpcore==0.9.* in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpx==0.13.3->googletrans==4.0.0-rc1) (0.9.1)        
+Requirement already satisfied: h11<0.10,>=0.8 in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpcore==0.9.*->httpx==0.13.3->googletrans==4.0.0-rc1) (0.9.0)
+Requirement already satisfied: h2==3.* in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from httpcore==0.9.*->httpx==0.13.3->googletrans==4.0.0-rc1) (3.2.0)
+Requirement already satisfied: hyperframe<6,>=5.2.0 in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from h2==3.*->httpcore==0.9.*->httpx==0.13.3->googletrans==4.0.0-rc1) (5.2.0)
+Requirement already satisfied: hpack<4,>=3.0 in c:\users\siddhesh\onedrive\desktop\hackathon\ieee-aeravat-codecapsule\chatbot-deployment\venv\lib\site-packages (from h2==3.*->httpcore==0.9.*->httpx==0.13.3->googletrans==4.0.0-rc1) (3.0.0)
+Building wheels for collected packages: googletrans
+  Building wheel for googletrans (pyproject.toml) ... done
+  Created wheel for googletrans: filename=googletrans-4.0.0rc1-py3-none-any.whl size=17458 sha256=7c61734173b6737a795116f53f84455ac9f0e0edcddad848727dec9a53589c1e
+  Stored in directory: c:\users\siddhesh\appdata\local\pip\cache\wheels\95\0f\04\b17a72024b56a60e499ce1a6313d283ed5ba332407155bee03
+Successfully built googletrans
+Installing collected packages: googletrans
+  Attempting uninstall: googletrans
+    Found existing installation: googletrans 3.0.0
+    Uninstalling googletrans-3.0.0:
+      Successfully uninstalled googletrans-3.0.0
+Successfully installed googletrans-4.0.0rc1
+
+[notice] A new release of pip is available: 23.2.1 -> 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> 
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> python chat.py
+Let's chat! (type 'quit' to exit)
+You: ओवरड्राफ्ट क्या है?
+Bot: एक ओवरड्राफ्ट एक ऐसी सेवा है जो आपको अपने खाते की तुलना में अधिक पैसा खर्च करने देता है, एक सेट सीमा तक।  
+You: క్యా ఆప్ బ్యాజ్ దరోం కా కామ్ కాసే కరతీ హాం
+Bot: I do not understand...
+You: వడ్డీ రేట్లు ఎలా పనిచేస్తాయో తెలుసా?
+Bot: వడ్డీ రేట్లు మీ పొదుపుపై మీరు ఎంత సంపాదిస్తారు లేదా రుణాలపై ఎంత చెల్లించాలో నిర్ణయిస్తాయి.
+You: How many types of bank accounts
+Bot: We employ encryption, multi-factor authentication, and continuous monitoring to safeguard your account.   
+You: quit
+(venv) PS C:\Users\SIDDHESH\OneDrive\Desktop\Hackathon\IEEE-Aeravat-CodeCapsule\chatbot-deployment> 
