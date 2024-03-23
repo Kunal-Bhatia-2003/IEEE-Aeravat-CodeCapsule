@@ -1,64 +1,68 @@
-{%load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BhashaBandhan</title>
-    
-    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Bhasha-Bank</title>
     <link rel="stylesheet" href="{% static 'css/Findex.css' %}">
-
-
+    <!-- Google Translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
-    <!-- Body -->
-    <div>
-        <!-- Navbar -->
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-left">
-                <a href="#" class="uk-navbar-item uk-logo">
-                    <img src="{% static '/images/bank_icon.jpeg' %}" class = "responsive-img" alt="Logo">
-                </a>
-            </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Language</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Navbar -->
-    </div>
-    <div>
-        <!-- Detail Section -->
-        <div class="hero-section">
-            <div class="hero-section-text">
-                <h1 class="hero-section-text-heading">BhashaBandhan</h1>
-                <p class="hero-section-text-para">A platform to connect people through languages</p>
-                <a href="#" class="hero-section-text-button">Get Started</a>
-            </div>
-            <div class="hero-section-image">
-                <img src="{% static '/images/hero-image.png' %}" class="responsive-img" alt="Hero Image">
-            </div>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/bank_icon.jpeg' %}" alt="Bank Logo">
         </div>
-        <!-- Detail Section -->
-
-    <!-- Body -->
+        <nav>
+            <ul>
+                <li><a href="Findex" id="home">Home</a></li>
+                <li><a href="/open-account/" id="open-account">Open Account</a></li>
+                <li><a href="/loan/" id="loan">Loan Applications</a></li>
+                <li><a href="/fixed-deposit/" id="fixed-deposit">Fixed Deposit</a></li>
+                <li><a href="/contact/" id="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
+    <div id="content">
+        <div class="landing-section">
+            <h2>Welcome to Bhasha-Bank</h2>
+            <p>A platform to connect people through languages</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </div>
+
+   <!-- Chatbox -->
+<div id="chatbox" class="chatbox">
+    <div id="chatbox-toggle" class="chatbox-toggle" onclick="toggleChatbox()">Chat</div>
+    <div id="chatbox-container" class="chatbox-container">
+        <!-- Chatbox content goes here -->
+    </div>
+    <div class="chatbox-input-container">
+        <input type="text" id="userInput" placeholder="Type a message...">
+        <button id="sendButton">Send</button>
+    </div>
+</div>
+
+
+    <!-- Google Translate Language Dropdown -->
+    <div id="google_translate_element"></div>
+    
+    <footer>
+        <p>&copy; 2024 Bhasha-Bank. All Rights Reserved.</p>
+    </footer>
 
     <!-- Scripts -->
-    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
-    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'assets/js/uikit.js' %}"></script>
-    <script src="{% static 'assets/js/simplebar.js' %}"></script>
-    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'js/Findex.js' %}"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,mr,bn,ta,te,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
 </body>
 </html>

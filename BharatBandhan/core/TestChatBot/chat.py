@@ -64,3 +64,13 @@ def get_response(msg):
                 return response
     
     return "I do not understand..."
+
+if __name__ == "__main__":
+    print("Let's chat! (type 'quit' to exit)")
+    while True:
+        sentence = input("You: ")
+        if sentence.lower() == "quit":
+            break
+
+        resp = get_response(sentence)
+        print("Bot:", resp)

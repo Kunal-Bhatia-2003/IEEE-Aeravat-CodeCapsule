@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Profile, Post, LikePost, FollowersCount
+from .models import Profile, Post, LikePost, FollowersCount, CustomerProfile
 from itertools import chain
 import random
 
@@ -255,7 +255,7 @@ def Fsignup(request):
         name = request.POST['name']
         print(get_response(name))
         email = request.POST['email']
-        document = request.POST['file']
+        document = request.POST['file']  # Assuming you'll handle document processing elsewhere
         password = request.POST['password']
         password2 = request.POST['password2']
 
@@ -270,20 +270,25 @@ def Fsignup(request):
                 user = User.objects.create_user(username=name, email=email, password=password)
                 user.save()
 
-                #log user in and redirect to settings page
+                # Log user in and redirect to settings page
                 user_login = auth.authenticate(username=name, password=password)
                 auth.login(request, user_login)
 
-                #create a Profile object for the new user
-                user_model = User.objects.get(username=name)
-                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
-                new_profile.save()
+                # Create a CustomerProfile object for the new user
+                customer_profile = CustomerProfile.objects.create(
+                    user=user,
+                    name=name,  # Populate other fields as needed
+                    email=email,  # If you want to store email in both models
+                    # ... other fields from the CustomerProfile model
+                )
+                customer_profile.save()
                 return redirect('Findex')
         else:
             messages.info(request, 'Password Not Matching')
             return redirect('Fsignup')
     else:
         return render(request, 'Fsignup.html')
+
     
 
 def Fsignin(request):

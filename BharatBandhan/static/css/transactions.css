@@ -1,0 +1,59 @@
+/* transactions.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1dede; /* Light grey background */
+}
+
+.transaction-form-container {
+    max-width: 400px;
+    margin: 50px auto; /* Center the form container vertically */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: center; /* Center-align all content */
+}
+
+.transaction-form-container h2 {
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for heading */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align form elements to the left */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 22px); /* Adjust width to accommodate border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    width: auto; /* Auto width based on content */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue background for button */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

@@ -1,31 +1,137 @@
-.login-btn {
-    background-color: #3f51b5;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px 0;
-  }
-  
-  .banner {
-    margin: 50px 0;
-    text-align: center;
-  }
-  
-  .banner img {
-    width: 100%;  /* Adjust width as needed */
-  }
-  
-  .responsive-img {
-    width: auto;
-    height: 66px;
-  }
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  header {
-    align-items: center;
-  }
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+}
 
-  .navbar-right {
-    margin-right: 0%;
-  }
+header {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}
+
+#content {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.landing-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
+
+.landing-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.landing-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.landing-section .btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.landing-section .btn:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Chatbox styles */
+.chatbox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.chatbox-toggle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+}
+
+.chatbox-container {
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chatbox.open {
+  height: 400px;
+}
+
+.chatbox.open .chatbox-toggle {
+  background-color: #dc3545;
+}
+
+/* Google Translate styles */
+#google_translate_element {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
