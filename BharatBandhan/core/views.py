@@ -224,7 +224,6 @@ def signup(request):
         return render(request, 'signup.html')
 
 def signin(request):
-    
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
