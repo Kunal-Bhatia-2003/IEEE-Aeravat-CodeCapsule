@@ -22,5 +22,6 @@ urlpatterns = [
     path('Floan', views.Floan, name='Floan'),
     path('Floan', views.Floan, name='Floan'),
     path('Ftransaction', views.Ftransaction, name='Ftransaction'),
+    path('Fdeposit', views.Fdeposit, name='Fdeposit'),
     path('send_message', views.send_message, name='send_message'),
 ]

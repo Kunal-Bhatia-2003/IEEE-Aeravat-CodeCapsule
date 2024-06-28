@@ -332,6 +332,10 @@ def Floan(request):
 def Fnetbanking(request):
     return render(request, 'Fnetbanking.html')
 
+def Fdeposit(request):
+    return render(request, 'Fdeposit.html')
+
+
 def Ftransaction(request):
     if request.method == 'POST':
         # Get form data
